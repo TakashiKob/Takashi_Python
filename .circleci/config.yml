@@ -1,8 +1,10 @@
 version: 2.1
+orbs:
+  python: circleci/python@0.3.0
 jobs:
  build:
    docker:
-     - image: circleci/node:10-browsers
+     - image: circleci/python:latest
    steps:
      - checkout
      - run:
@@ -10,12 +12,3 @@ jobs:
          command: |
            echo 'Hello World!'
            echo 'This is the delivery pipeline'
-     - run:
-         name: コードの取得
-         command: |
-           ls -al
-           echo '^^^That should look familiar^^^'
-     - run:
-         name: 独自コンテナで実行
-         command: |
-           node -v
