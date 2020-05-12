@@ -9,11 +9,7 @@ jobs: # 1回の実行の基本作業単位
     steps: # `build` ジョブを構成するステップ
       - checkout # ソースコードを作業ディレクトリにチェックアウトします
       - run:
-          command: |
-            sudo pip install pipenv
-            pipenv install
-      - run:
-          command: |
-            pipenv run error.py test
+        name: PYPYTEST
+        command: 'error.py'
       - store_test_results: # テストサマリー (https://circleci.com/docs/ja/2.0/collect-test-data/) に表示するテスト結果をアップロードします
           path: test-results
