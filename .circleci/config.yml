@@ -5,10 +5,16 @@ jobs:
  build:
    docker:
      - image: circleci/python:latest
+   working_directory: ~/Takashi_Python
    steps:
      - checkout
      - run:
-         name: 最初の一歩
+         name: パイソンテスト
          command: |
-           echo 'Hello World!'
-           echo 'This is the delivery pipeline'
+            sudo pip install pipenv
+            pipenv install
+      - run:
+          command: |
+            pipenv run python error.py test
+  - store_test_results:
+            path: test-results
