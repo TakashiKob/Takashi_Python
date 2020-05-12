@@ -10,6 +10,6 @@ jobs: # 1回の実行の基本作業単位
       - checkout # ソースコードを作業ディレクトリにチェックアウトします
       - run:
           name: PYPYTEST
-          command: test 'error.py'
+          command: test true 'error.py'
       - store_test_results: # テストサマリー (https://circleci.com/docs/ja/2.0/collect-test-data/) に表示するテスト結果をアップロードします
           path: test-results
