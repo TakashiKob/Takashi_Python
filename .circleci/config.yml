@@ -2,11 +2,11 @@ version: 2.1
 orbs:
   python: circleci/python@0.3.0
 jobs:
- build:
-   docker:
-     - image: circleci/python:latest
-   working_directory: ~/Takashi_Python
-   steps: 
+  build:
+    docker:
+      - image: circleci/python:latest
+    working_directory: ~/Takashi_Python
+  steps: 
      - run:
          name: パイソンテスト
          command: |
@@ -15,5 +15,5 @@ jobs:
      - run:
           command: |
             pipenv run python error.py test
-  - store_test_results:
+     - store_test_results:
             path: test-results
