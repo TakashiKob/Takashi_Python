@@ -9,7 +9,7 @@ jobs:
   steps: 
       - checkout
       - job:
-         name: パイソンテスト
+         name: pythontest
          command: |
             sudo pip install pipenv
             pipenv install
