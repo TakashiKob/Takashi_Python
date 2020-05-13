@@ -1,3 +1,3 @@
-test = 2
-test2 = 4
+test = 0
+test2 = 1
 print(test2/test)
